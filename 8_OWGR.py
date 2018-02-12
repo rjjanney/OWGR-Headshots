@@ -136,11 +136,16 @@ def save_updated_excel_file(updated_list):
     for line in updated_list:
         worksheet.cell(row, 2).value = line[0]
         worksheet.cell(row, 2).font = Font(bold=True)
-        worksheet.cell(row, 2).alignment = Alignment(horizontal="center")
+        worksheet.cell(row, 2).alignment = Alignment(horizontal="center", shrinkToFit=True)
         worksheet.cell(row, 3).value = line[1]
+        worksheet.cell(row, 3).alignment = Alignment(horizontal="left")
         worksheet.cell(row, 4).border = thin_border
         worksheet.cell(row, 4).fill = line[2]
         row += 1
+
+    worksheet.column_dimensions["B"].width = 4
+    worksheet.column_dimensions["C"].width = 18
+    worksheet.column_dimensions["D"].width = 4
 
     tab = Table(displayName="Table1", ref=("B3:D" + str(row-1)))
     style = TableStyleInfo(name="TableStyleLight8", showFirstColumn=False,
