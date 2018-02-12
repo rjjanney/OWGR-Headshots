@@ -22,7 +22,10 @@ def get_excel_sheet_data():
     old_list = []
     for row in worksheet.iter_rows(min_row=4, min_col=2, max_col=4):
         if row[0].value:
-            old_list.append((row[0].value, row[1].value, row[2].fill.bgColor.rgb)) # rank, name, headshot or not
+            # rank, name, headshot or not
+            old_list.append((row[0].value,
+                             row[1].value,
+                             row[2].fill.bgColor.rgb))
     return old_list
 
 
@@ -123,7 +126,8 @@ def save_updated_excel_file(updated_list):
     including adding color to 2nd column to show green "80FF80" if headshot
     exists.
     '''
-    thin_border = Border(bottom=Side(style='thin'))
+    thin_border = Border(bottom=Side(style='thin'), left=Side(style='thin'))
+    thick_border = Border(bottom=Side(style='thick'))
 
     workbook = Workbook()
     worksheet = workbook.active
@@ -135,17 +139,23 @@ def save_updated_excel_file(updated_list):
     row = 4
     for line in updated_list:
         worksheet.cell(row, 2).value = line[0]
-        worksheet.cell(row, 2).font = Font(bold=True)
-        worksheet.cell(row, 2).alignment = Alignment(horizontal="center", shrinkToFit=True)
+        worksheet.cell(row, 2).font = Font(bold=True, size=14.0)
+        worksheet.cell(row, 2).alignment = Alignment(horizontal="center",
+                                                     shrinkToFit=True)
         worksheet.cell(row, 3).value = line[1]
         worksheet.cell(row, 3).alignment = Alignment(horizontal="left")
         worksheet.cell(row, 4).border = thin_border
         worksheet.cell(row, 4).fill = line[2]
         row += 1
 
-    worksheet.column_dimensions["B"].width = 4
-    worksheet.column_dimensions["C"].width = 18
-    worksheet.column_dimensions["D"].width = 4
+    # column widths
+    worksheet.column_dimensions["B"].width = 6
+    worksheet.column_dimensions["C"].width = 20
+    worksheet.column_dimensions["D"].width = 6
+
+    # thick line for the cutoff rank
+    for i in range(5):
+        worksheet.cell(67, i+1).border = thick_border
 
     tab = Table(displayName="Table1", ref=("B3:D" + str(row-1)))
     style = TableStyleInfo(name="TableStyleLight8", showFirstColumn=False,
@@ -153,7 +163,6 @@ def save_updated_excel_file(updated_list):
                            showColumnStripes=False)
     tab.tableStyleInfo = style
     worksheet.add_table(tab)
-
 
     workbook.save('OWGR.xlsx')
 
