@@ -169,6 +169,12 @@ def save_updated_excel_file(updated_list):
 
 
 def spit_out_headshots_needed(updated_list):
+    '''
+    Takes an ordered list of (rank, player name, [COLOR]) and
+    saves to a text file a title and "rank    player name" for all that
+    have the color red.
+    '''
+
     heads_needed = []
     for line in updated_list:
             # if names match,
@@ -193,8 +199,8 @@ up_to_date_list = process_lists(existing_list, latest_list)
 # sort list by rank
 up_to_date_list.sort(key=lambda x: x[0])
 
+# save text list of heads needed
 spit_out_headshots_needed(up_to_date_list)
 
 # save updated_list to excel file
-
 save_updated_excel_file(up_to_date_list)
