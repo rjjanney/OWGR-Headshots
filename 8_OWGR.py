@@ -4,7 +4,7 @@ from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Border, Side, Font, Alignment
 import requests
 from openpyxl.worksheet.table import Table, TableStyleInfo
-import pprint
+
 
 red = "FFFF8080"
 green = "FF80FF80"
@@ -192,6 +192,48 @@ def spit_out_headshots_needed(updated_list):
 
     return
 
+
+def get_full_names_list():
+
+    '''
+    A function to scrape the names of all players listed at
+    OWGR.com.
+
+    List to be used as official names for fuzzywuzzy matching
+    '''
+
+    url = "http://www.owgr.com/ranking?pageSize=All"
+    html = requests.get(url)
+    # html = open('docs/Official World Golf Ranking - Ranking.html')
+    bsObj = BeautifulSoup(html.content, "html.parser")
+    full_name_list = []
+    for item in bsObj.body.find(
+                                'div',
+                                class_='table_container'
+                                ).table.findAll('tr'):
+
+        # find gender in the next item in the <ul> ... </ul>
+        name = item.findNext('td', {'class': 'name'}).a.string
+
+        full_name_list.append(name)
+    full_name_list.pop(0)
+    return full_name_list
+
+
+def save_full_names_list(all_the_names):
+    '''
+    Takes an ordered list of (rank, player name, [COLOR]) and
+    saves to a text file a title and "rank    player name" for all that
+    have the color red.
+    '''
+
+    with open('all_players_OWGR.txt', 'w') as file_handler:
+        for line in all_the_names:
+            file_handler.write("{}\n".format(line))
+
+    return
+
+
 existing_list = get_excel_sheet_data()
 latest_list = get_rank_names_list()
 up_to_date_list = process_lists(existing_list, latest_list)
@@ -204,3 +246,7 @@ spit_out_headshots_needed(up_to_date_list)
 
 # save updated_list to excel file
 save_updated_excel_file(up_to_date_list)
+
+# get and save full names list from OWGR.com
+full_names_list = get_full_names_list()
+save_full_names_list(full_names_list)
