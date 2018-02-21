@@ -1,0 +1,221 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>OWGR WIDGET</title>
+    <link href="SharingRankingTable_data/css.css" rel="stylesheet" type="text/css">
+</head>
+<body id="owgr">
+  <style type="text/css">
+        /*NORMALIZE*/
+        article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom:1}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-size:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}html,button,input,select,textarea{font-family:sans-serif}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em;margin:1em 0}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.67em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}blockquote{margin:1em 40px}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}p,pre{margin:1em 0}code,kbd,pre,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:'';content:none}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}dl,menu,ol,ul{margin:1em 0}dd{margin:0 0 0 40px}menu,ol,ul{padding:0 0 0 40px}nav ul,nav ol{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}figure{margin:0}form{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal;*margin-left:-7px}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;*overflow:visible}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;*height:13px;*width:13px}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+
+        #owgr {
+            background:#0a0a0a;
+            overflow:hidden;
+        }
+        #owgr #site_logo {
+            font-family: 'Lato', sans-serif;
+            height:auto;
+            display:inline-block;
+            float:left;
+            font-weight:300;
+            font-size:20px;
+            line-height:20px;
+            padding:15px 18px;
+            color:#fff;
+            text-decoration:none;
+        }
+        #owgr #site_logo b {
+            display:block;
+            font-weight:bold;
+            font-style:italic;
+            line-height:22px;
+            font-size:17px;
+            line-height: 22px;
+            padding-bottom: 0px;
+        }
+        #owgr .header {
+            background:#000;
+            height:100px;
+            color:#fff;
+        }
+        #owgr .header .headings {
+            width:100%;
+            float:left;
+        }
+        #owgr .header span {
+            font-size:11px;
+        }
+        #owgr .header .region {
+            float:left;
+            margin-left:18px;
+        }
+        #owgr .header .date {
+            float:right;
+            margin-right:18px;
+        }
+        #owgr .table_container {
+            font-size:12px;
+            text-align:center;
+        }
+        #owgr .table_container th {
+            color:#fff;
+            background:#080808 url('/styles/img/widget_gradiant.png') repeat-x;
+            font-size:11px;
+        }
+        #owgr .table_container tr {
+            background:#fff;
+        }
+        #owgr .table_container tr:nth-child(even) {
+            background:#cfcfcf;
+        }
+        #owgr .table_container tr:nth-child(odd) {
+            background:#fff;
+        }
+        #owgr .table_container {
+            width:100%;
+            overflow: hidden;
+        }
+        #owgr .table_container td, #owgr .table_container th {
+            
+        }
+        #owgr .table_container td {
+            border-right:solid 1px #a8a8a8;
+            color:#0e0e0e;
+        }
+        #owgr .table_container .player {
+            width:100%;
+            text-align:left;
+            font-weight:bold;
+        }
+        #owgr .footer {
+            height: 50px;
+            background: #0a0a0a;
+        }
+        #owgr .footer .visit {
+            font-size:11px;
+            color:#fff;
+            text-decoration:none;
+            margin: 18px;
+            display:inline-block;
+            float:left;
+        }
+        #owgr .footer .linkicon {
+            width:18px;
+            height:18px;
+            background:url('/styles/img/link.png');
+            float:right;
+            margin:18px;
+        }
+    </style>
+
+ <div class="header">
+        <a href="http://www.owgr.com/" target="_blank" id="site_logo"><b>OFFICIAL</b>WORLD GOLF RANKING</a>
+        <div class="headings">
+            <span class="region">World's Top 10</span>
+            <span class="date">4TH FEBRUARY 2018</span>
+        </div>
+ </div>
+
+  
+    <div class="table_container">
+         <table style="font-size: 12px; text-align: center; ">
+         <thead>
+             <tr class="titles">
+                 <th>This Week</th>
+                 <th>Last week</th>
+                 <th class="player">Player</th>                 
+                 <th>Ctry</th>
+                 <th>Points average</th>
+                 <th></th>
+             </tr>
+          </thead>
+                  
+                    <tbody><tr>
+                        <td>1</td>                            
+                        <td>1 </td>
+                        <td class="player">Dustin Johnson</td>                            
+                        <td>USA</td>                                     
+                        <td>10.74</td>  
+                    </tr> 
+                     
+                    <tr>
+                        <td>2</td>                            
+                        <td>2 </td>
+                        <td class="player">Jon Rahm</td>                            
+                        <td>ESP</td>                                     
+                        <td>9.37</td>  
+                    </tr> 
+                     
+                    <tr>
+                        <td>3</td>                            
+                        <td>3 </td>
+                        <td class="player">Jordan Spieth</td>                            
+                        <td>USA</td>                                     
+                        <td>8.64</td>  
+                    </tr> 
+                     
+                    <tr>
+                        <td>4</td>                            
+                        <td>4 </td>
+                        <td class="player">Justin Thomas</td>                            
+                        <td>USA</td>                                     
+                        <td>7.97</td>  
+                    </tr> 
+                     
+                    <tr>
+                        <td>5</td>                            
+                        <td>6 </td>
+                        <td class="player">Justin Rose</td>                            
+                        <td>ENG</td>                                     
+                        <td>7.44</td>  
+                    </tr> 
+                     
+                    <tr>
+                        <td>6</td>                            
+                        <td>5 </td>
+                        <td class="player">Hideki Matsuyama</td>                            
+                        <td>JPN</td>                                     
+                        <td>7.26</td>  
+                    </tr> 
+                     
+                    <tr>
+                        <td>7</td>                            
+                        <td>7 </td>
+                        <td class="player">Rickie Fowler</td>                            
+                        <td>USA</td>                                     
+                        <td>6.69</td>  
+                    </tr> 
+                     
+                    <tr>
+                        <td>8</td>                            
+                        <td>8 </td>
+                        <td class="player">Rory McIlroy</td>                            
+                        <td>NIR</td>                                     
+                        <td>5.96</td>  
+                    </tr> 
+                     
+                    <tr>
+                        <td>9</td>                            
+                        <td>9 </td>
+                        <td class="player">Brooks Koepka</td>                            
+                        <td>USA</td>                                     
+                        <td>5.90</td>  
+                    </tr> 
+                     
+                    <tr>
+                        <td>10</td>                            
+                        <td>10 </td>
+                        <td class="player">Jason Day</td>                            
+                        <td>AUS</td>                                     
+                        <td>5.80</td>  
+                    </tr> 
+                
+         </tbody></table>
+    </div>
+
+    <div class="footer">
+        <a class="visit" href="http://www.owgr.com/" target="_blank">VISIT WWW.OWGR.COM</a>
+        <a class="linkicon" target="_blank" href="http://www.owgr.com/ranking/sharingwidgetconfigurepage"></a> 
+    </div>
+     
+    </body></html>

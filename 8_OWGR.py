@@ -4,7 +4,7 @@ from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Border, Side, Font, Alignment
 import requests
 from openpyxl.worksheet.table import Table, TableStyleInfo
-import pprint
+
 
 red = "FFFF8080"
 green = "FF80FF80"
@@ -21,12 +21,13 @@ def get_excel_sheet_data():
     worksheet = workbook.active
     # print(worksheet.dimensions)
     old_list = []
-    for row in worksheet.iter_rows(min_row=4, min_col=2, max_col=4):
+    for row in worksheet.iter_rows(min_row=4, min_col=2, max_col=5):
         if row[0].value:
             # rank, name, headshot or not
             old_list.append((row[0].value,
                              row[1].value,
-                             row[2].fill.bgColor.rgb))
+                             row[2].fill.bgColor.rgb,
+                             row[3].fill.bgColor.rgb))
     return old_list
 
 
@@ -74,6 +75,8 @@ def process_lists(old_list, new_list):
     # make copy of old_list - working_list
     working_list = list(old_list)
     unmatched_new_list = list(new_list)
+    color1 = ""
+    color2 = ""
 
     # compare each line of latest list to each line of working list
     for item in new_list:
@@ -81,24 +84,34 @@ def process_lists(old_list, new_list):
             # if names match,
             if item[1].lower() == line[1].lower():
                 if line[2] == green:
-                    # copy existing list entry and add rank as a 3rd entry
-                    # in new list "updated_list"
-                    updated_list.append((item[0],
-                                         item[1],
-                                         PatternFill(start_color=green,
-                                                     end_color=green,
-                                                     fill_type="solid")))
+                    # copy color column1
+                    color1 = green
+
                 elif line[2] == red:
-                    # copy existing list entry and add rank as a 3rd entry
-                    # in new list "updated_list"
-                    updated_list.append((item[0],
-                                         item[1],
-                                         PatternFill(start_color=red,
-                                                     end_color=red,
-                                                     fill_type="solid")))
+
+                    color1 = red
+
+                if line[3] == green:
+                    # copy color column1
+                    color2 = green
+
+                elif line[3] == red:
+
+                    color2 = red
+
                 # remove match from working list and unmatched_new_list
                 working_list.remove(line)
                 unmatched_new_list.remove(item)
+            # copy existing list entry and add rank as 3rd & 4th entry
+            # in new list "updated_list"
+        updated_list.append((item[0],
+                             item[1],
+                             PatternFill(start_color=color1,
+                                         end_color=color1,
+                                         fill_type="solid"),
+                             PatternFill(start_color=color2,
+                                         end_color=color2,
+                                         fill_type="solid")))
 
     # append non-matches to updated list with red formatting
     for item in unmatched_new_list:
@@ -106,16 +119,22 @@ def process_lists(old_list, new_list):
                              item[1],
                              PatternFill(start_color=red,
                                          end_color=red,
+                                         fill_type="solid"),
+                             PatternFill(start_color=red,
+                                         end_color=red,
                                          fill_type="solid")))
 
     # copy all the non-ranked headshots matches
     # to updated_list, with ranking of 101
-    # perserving "has head shot" info in line[1]
+    # preserving "has head shot" info in line[1]
     for line in working_list:
         updated_list.append((101,
                              line[1],
                              PatternFill(start_color=line[2],
                                          end_color=line[2],
+                                         fill_type="solid"),
+                             PatternFill(start_color=line[3],
+                                         end_color=line[3],
                                          fill_type="solid")))
     return updated_list
 
@@ -135,7 +154,8 @@ def save_updated_excel_file(updated_list):
     worksheet.column_dimensions["B"].width = 20
     worksheet.cell(3, 2).value = "RANK"
     worksheet.cell(3, 3).value = "Player Name"
-    worksheet.cell(3, 4).value = "Headshot"
+    worksheet.cell(3, 4).value = "2017"
+    worksheet.cell(3, 5).value = "2018"
 
     row = 4
     for line in updated_list:
@@ -147,18 +167,21 @@ def save_updated_excel_file(updated_list):
         worksheet.cell(row, 3).alignment = Alignment(horizontal="left")
         worksheet.cell(row, 4).border = thin_border
         worksheet.cell(row, 4).fill = line[2]
+        worksheet.cell(row, 5).border = thin_border
+        worksheet.cell(row, 5).fill = line[3]
         row += 1
 
     # column widths
     worksheet.column_dimensions["B"].width = 6
     worksheet.column_dimensions["C"].width = 20
-    worksheet.column_dimensions["D"].width = 6
+    worksheet.column_dimensions["D"].width = 10
+    worksheet.column_dimensions["E"].width = 10
 
     # thick line for the cutoff rank
-    for i in range(5):
+    for i in range(6):
         worksheet.cell(67, i+1).border = thick_border
 
-    tab = Table(displayName="Table1", ref=("B3:D" + str(row-1)))
+    tab = Table(displayName="Table1", ref=("B3:E" + str(row-1)))
     style = TableStyleInfo(name="TableStyleLight8", showFirstColumn=False,
                            showLastColumn=False, showRowStripes=False,
                            showColumnStripes=False)
@@ -178,7 +201,7 @@ def spit_out_headshots_needed(updated_list):
     heads_needed = []
     for line in updated_list:
             # if names match,
-            if line[2].bgColor.rgb == red:
+            if line[2].bgColor.rgb == red and line[3].bgColor.rgb == red:
                 # copy existing list entry and add rank as a 3rd entry
                 # in new list "updated_list"
                 heads_needed.append((line[0],

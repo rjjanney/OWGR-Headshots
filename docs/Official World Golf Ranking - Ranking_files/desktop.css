@@ -1,0 +1,444 @@
+@media screen and (min-width:1024px) {
+
+    #site_container {
+        width: 985px;
+    }
+
+    #main_header {
+        padding: 28px 23px 18px 23px;
+        overflow: hidden;
+        width: 939px;
+    }
+
+	/*Social media links style*/
+	.social-menu {
+		text-align:right;
+		float: right;
+		padding-top: 15px;
+		padding-bottom: 0px;
+		width: 220px;
+
+	}
+	.social-menu .in_touch {
+		font-size: 11px; 
+		padding-right: 5px;
+		font-family: sans-serif;
+		display: inline;
+	}
+	
+	.and_finally .social-menu {
+		display: none;
+	}
+	.social-menu i.fa {
+		color: #a1a1a1;
+		margin-left: 5px;
+		font-size: 26px;
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+	}
+	.fa {
+		display: inline-block;
+		font: normal normal normal 14px/1 FontAwesome;
+		font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		transform: translate(0, 0);
+	}
+	.social-menu i.fa:hover {
+		color: #FFFFFF;
+	}
+
+	.fa-facebook-f:before,
+	.fa-facebook:before {
+		content: "\f09a";
+	}
+	.fa-instagram:before {
+		content: "\f16d";
+	}
+	.fa-twitter:before {
+		content: "\f099";
+	}
+	
+	/*End of Social media links*/
+
+    #site_logo {
+        width: 400px;
+        height: 53px;
+        font-size: 32px;
+        line-height: 26px;
+        padding: 0;
+    }
+
+        #site_logo b {
+            display: block;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 28px;
+            line-height: 22px;
+            padding-bottom: 5px;
+        }
+
+    #site_nav {
+        margin-top: 40px;
+    }
+
+    #main_content {
+        max-width: 627px;
+        margin-bottom: 0;
+        float: left;
+    }
+
+    #latest_news .text {
+        margin-right: 9px;
+    }
+
+    #latest_news .more {
+        float: right;
+    }
+
+    #sidebar {
+        max-width: 340px;
+        float: right;
+        margin-top: -9px;
+    }
+
+        #sidebar #player_search {
+            display: block;
+            margin-bottom: 9px;
+        }
+
+    #ranking_graph, #download_ranking, #ranking_history, #latest_news_s {
+        width: 100%;
+    }
+
+    #player_search_m {
+        display: none;
+    }
+
+    /** SHOW **/
+    .thb {
+        display: block;
+    }
+
+    #share_widget .preview {
+        width: 300px;
+        height: 252px;
+        display: block;
+    }
+
+    /********************|********************/
+    /*            RANKING TABLE              */
+    /********************|********************/
+    #ranking_table .table_container {
+        top: 9px;
+        position: relative;
+    }
+
+    .site_block .select_container {
+        width: 140px;
+        height: 30px;
+        top: 31px;
+    }
+
+        .site_block .select_container .title {
+            color: #999999;
+            font-size: 0.688em;
+            display: block;
+            position: absolute;
+            top: -16px;
+            left: 5px;
+        }
+
+        .site_block .select_container .arrow {
+            display: none;
+        }
+
+    .pointerevents .site_block .select_container .arrow,
+    .pointerevents #by_tour .arrow,
+    .pointerevents #by_year .arrow {
+        position: absolute;
+        width: 10px;
+        height: 12px;
+        padding: 5px 5px 5px 10px;
+        background: #000 url('/styles/img/sprites.png') -290px 6px;
+        right: 4px;
+        top: 4px;
+        z-index: 2;
+        margin: 0;
+        pointer-events: none;
+        display: block;
+    }
+
+    .site_block .select_container .select_filter {
+        /*background:rgba(0,0,0,0.5);*/
+        background: #000;
+        color: #fff;
+        padding: 0 0 0 5px;
+        border-radius: 3px;
+        border: solid 1px #5a5a5a;
+        width: 100%;
+        height: 30px;
+        font-size: 11px;
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .pointerevents .site_block .select_container .select_filter {
+        padding: 5px;
+    }
+
+    #ranking_table #player_filter {
+        position: absolute;
+        top: 13px;
+        right: 160px;
+        width: 140px;
+        overflow: visible;
+    }
+
+        #ranking_table #player_filter .input {
+            border-radius: 3px;
+            border: solid 1px #5a5a5a;
+            height: 16px;
+            width: 118px;
+        }
+
+        #ranking_table #player_filter .search_button {
+            display: none;
+        }
+
+        #ranking_table #player_filter .title {
+            color: #999999;
+            font-size: 0.688em;
+            display: block;
+            position: absolute;
+            top: -7px;
+            left: 19px;
+        }
+
+    /*EVENTS*/
+    #by_tour {
+        right: 165px;
+    }
+
+    #events_table .table_container {
+        top: 9px;
+        position: relative;
+    }
+
+    /********************|********************/
+    /*               NEWS CONTENT            */
+    /********************|********************/
+    #latest_news_list .item {
+        width: 295px;
+        margin: 0 9px;
+    }
+
+        #latest_news_list .item .text {
+            width: 276px;
+            margin: 0;
+        }
+
+    #news_article {
+    }
+
+        #news_article .nav {
+        }
+
+    /*********DOWNLOADS**********/
+    #download_archive .dwld_info .search_field {
+        width: 100px;
+    }
+
+        #download_archive .dwld_info .search_field .select_container {
+            width: 100px;
+        }
+
+    /********************|********************/
+    /*                 FOOTER                */
+    /********************|********************/
+    #main_footer {
+        margin-top: 55px;
+    }
+
+        #main_footer .logos {
+            width: 949px;
+            overflow: hidden;
+            background: url('/styles/img/dark_trans.png');
+            border-radius: 3px;
+            padding: 18px;
+        }
+
+    .logos .eligible_tours_title {
+        position: absolute;
+        font-size: 0.688em;
+    }
+
+    .logos .eligible_tours {
+        margin: 28px 0 0 -9px;
+        width: 630px;
+        height: 220px;
+        padding: 8px 0;
+        float: left;
+        background: url('/styles/img/dark_trans.png');
+        text-align: center;
+        border-radius: 3px;
+    }
+
+    .logos .founders_title {
+        position: absolute;
+        font-size: 0.688em;
+        margin-right: 95px;
+        right: 0px;
+        margin-top: 9px;
+    }
+
+    .logos .founders {
+        width: 331px;
+        height: 224px;
+        padding: 6px 0;
+        margin: 28px -9px 0 0;
+        float: right;
+        background: url('/styles/img/dark_trans.png');
+        text-align: center;
+        border-radius: 3px;
+    }
+
+    .separator {
+        width: 100%;
+        height: 1px;
+        float: left;
+    }
+
+    #main_footer .and_finally {
+        width: 949px;
+        overflow: hidden;
+        margin: 18px 0;
+        padding: 0 18px;
+    }
+
+    #main_footer .and_finally {
+        font-size: 0.625em;
+    }
+
+        #main_footer .and_finally .cpyrit {
+            float: left;
+        }
+
+        #main_footer .and_finally #footer_links {
+            float: right;
+        }
+
+            #main_footer .and_finally #footer_links li {
+                float: left;
+                margin-left: 27px;
+            }
+
+    /******** RANKING GRAPH ********/
+    .overlay .graph_box {
+        width: 940px;
+    }
+}
+
+@media screen and (min-width:620px) {
+    .page_banner .image {
+        left: -200px;
+    }
+}
+
+@media screen and (min-width:700px) {
+    .page_banner .image {
+        left: -130px;
+    }
+
+    .ranking_graph h2 {
+    }
+
+    .ranking_graph #search_fields {
+        float: right;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width:810px) {
+    .page_banner .image {
+        left: -70px;
+    }
+}
+
+@media screen and (min-width:900px) {
+    .page_banner .image {
+        left: -30px;
+    }
+}
+
+@media screen and (min-width:970px) {
+    .page_banner .image {
+        left: 0;
+    }
+}
+
+
+
+
+
+#event_result_table .event_slider, 
+#latest_results .event_slider
+ {
+    width: 80px;
+    height: auto;
+    float: left;
+}
+
+#event_result_table .event_slider ul, 
+#latest_results .event_slider ul{
+    width: 80px;
+     height: auto;
+}
+
+#event_result_table .event_slider ul li , 
+#latest_results .event_slider ul li {
+    width: 80px;
+    height: 70px;
+    align-self: center;
+    text-align: center;
+}
+
+#event_result_table .event_slider ul li img.event_logo,
+#latest_results .event_slider ul li img.event_logo,
+#weeks_winners .event_slider ul li img.event_logo {
+    max-width: 70px;
+    max-height: 60px;
+   
+}
+
+#latest_results .event_slider ul li img.event_logo
+{
+    margin: 5px;
+}
+
+
+#weeks_winners .event_slider   {
+    width: 70px;
+    height: auto;
+    float: left;
+}
+
+#weeks_winners .event_slider ul {
+    width: 70px;
+     height: auto;
+}
+
+
+#weeks_winners .event_slider ul li  {
+    width: 70px;
+    height: 70px;
+    align-self: center;
+    text-align: center;
+}
+
+#weeks_winners .event_slider ul li img.event_logo {
+    margin: 5px 0;
+}

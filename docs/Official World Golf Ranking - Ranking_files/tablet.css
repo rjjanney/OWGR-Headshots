@@ -1,0 +1,1162 @@
+@media screen and (min-width:620px)
+{
+    body
+    {
+        background: #555655 url('/styles/img/deskbg.jpg') no-repeat center center fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+    }
+
+    h2
+    {
+        font-size: 1.625em;
+    }
+    .sub_header
+    {
+        font-size: 0.750em;
+    }
+
+    /********************|********************/
+    /*                HEADER                 */
+    /********************|********************/
+    #site_nav
+    {
+        float: right;
+        margin-top: 36px;
+        position: static;
+    }
+    #site_nav .menu
+    {
+        display: none;
+    }
+    #site_nav ul
+    {
+        margin: 0;
+        padding: 0;
+        height: auto;
+        width: auto;
+        position: static;
+        top: 0;
+    }
+    #site_nav:hover ul, #site_nav.open ul
+    {
+        height: auto;
+        width: auto;
+    }
+    #site_nav ul li
+    {
+        background: none;
+        float: left;
+        margin-left: 39px;
+        padding: 0;
+        line-height: 12px;
+        display: inline;
+        width: auto;
+    }
+    #site_nav ul li:hover
+    {
+        background: none;
+    }
+
+    #site_nav ul li a
+    {
+        padding: 0;
+        display: inline;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+
+    /********************|********************/
+    /*             RANKING ROLLER            */
+    /********************|********************/
+    #ranking_roller
+    {
+        margin: 9px 0;
+        overflow: hidden;
+        height: auto;
+    }
+    #ranking_roller .nav
+    {
+        display: block;
+        width: 10px;
+        height: 20px;
+        background: url('/styles/img/sprites.png');
+    }
+    #ranking_roller .nav.left
+    {
+        float: left;
+        background-position: -90px -0;
+        margin: 9px 8px 0 5px;
+    }
+    #ranking_roller .nav.right
+    {
+        float: right;
+        background-position: -80px -0;
+        margin: 9px 5px 0 8px;
+    }
+
+    #ranking_roller .players
+    {
+        height: 24px;
+        background: url('/styles/img/dark_trans.png');
+        padding: 8px;
+        border-radius: 5px;
+        overflow: hidden;
+        float: none;
+        width: auto;
+        margin: 0 auto;
+    }
+    #ranking_roller .players .fadeout
+    {
+        margin-top: 7px;
+        width: 28px;
+        height: 17px;
+        display: block;
+        background: url('/styles/img/sprites.png') -110px 0;
+        position: absolute;
+        right: 0;
+        top: 5px;
+        z-index: 100;
+    }
+    #ranking_roller .players ul
+    {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        width: 90000px;
+        transition: none;
+        position: relative;
+        float: left;
+    }
+    #ranking_roller .players ul li
+    {
+        float: left;
+        padding: 0;
+        width: auto;
+        border: none;
+        height: 35px;
+    }
+    #ranking_roller .players ul li:nth-child(odd)
+    {
+        background: none;
+    }
+    #ranking_roller .players ul li .flag
+    {
+        width: 28px;
+        height: 17px;
+        background: #000;
+        display: block;
+        float: left;
+        margin: 4px 5px 0 0;
+    }
+    #ranking_roller .players ul li .name
+    {
+        margin: 5px 0 0 0;
+        font-size: 0.750em;
+        padding: 0 9px 0 0;
+    }
+    /********************|********************/
+    /*             HERO/Page BANNER          */
+    /********************|********************/
+    .page_banner
+    {
+        width: 100%;
+        height: 287px;
+        background: #000000;
+        border-radius: 3px;
+        position: relative;
+        overflow: hidden;
+    }
+    .page_banner .image
+    {
+        width: 985px;
+        height: 287px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .page_banner .banner_grad
+    {
+        position: absolute;
+        width: 736px;
+        height: 287px;
+        top: 0;
+        right: 0;
+        background: url('/styles/img/banner_gradiant2.png');
+        z-index: 1;
+    }
+    .page_banner span
+    {
+        float: right;
+        clear: right;
+        margin: 0 45px 0 0;
+        font-family: 'Lato' , sans-serif;
+        z-index: 100;
+        position: relative;
+        text-align: right;
+        width: 45%;
+    }
+    .page_banner .week
+    {
+        margin-top: 45px;
+        font-size: 1.5em;
+        font-weight: 300;
+        margin-bottom: 45px;
+    }
+    .page_banner .name
+    {
+        font-size: 1.625em;
+        line-height: 1em;
+        font-weight: 700;
+    }
+    #player_banner .name
+    {
+        margin-top: 34px;
+    }
+    #player_banner .stats
+    {
+        font-size: 0.750em;
+        color: #cccccc;
+        float: right;
+        clear: right;
+        z-index: 100;
+        position: relative;
+        margin: 70px 45px 0 0;
+        line-height: 1.6em;
+    }
+    #player_banner .stats li
+    {
+        text-align: right;
+    }
+    #player_banner .stats b
+    {
+        color: #fff;
+    }
+    .page_banner .rank
+    {
+        font-size: 1.25em;
+    }
+    .page_banner .since
+    {
+        font-size: 1em;
+    }
+    /********************|********************/
+    /*               HOME TABLES             */
+    /********************|********************/
+    .site_block table
+    {
+        font-size: 0.813em;
+    }
+
+    .site_block table .tour, .site_block table .from, .site_block table .to
+    {
+        display: table-cell;
+    }
+    .site_block table .tour
+    {
+        padding: 9px 0;
+    }
+    .site_block table .event
+    {
+        padding-left: 10px;
+    }
+    .site_block .table_container
+    {
+        width: auto;
+        margin: 9px;
+    }
+    .site_block .table_container table
+    {
+    }
+
+    /********************|********************/
+    /*             LATEST NEWS        */
+    /********************|********************/
+    #latest_news .wrapper
+    {
+        float: left;
+        min-height: 250px;
+    }
+
+    #latest_news .text
+    {
+        overflow: hidden;
+        margin: 0 9px 9px 9px;
+    }
+    #latest_news .news_image
+    {
+        width: 198px;
+        height: 250px;
+        float: right;
+        display: block;
+        position: relative;
+        margin: -43px 18px 9px 18px;
+        border-radius: 3px;
+    }
+    #latest_news .news_image .img
+    {
+        width: 198px;
+        height: 250px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    #latest_news .news_image .img_tag
+    {
+        position: absolute;
+        z-index: 100;
+        width: 178px;
+        padding: 5px 10px;
+        background: url('/styles/img/dark_trans.png');
+        font-size: 0.625em;
+        text-align: right;
+        bottom: 0;
+    }
+
+    #latest_news .more
+    {
+        margin-right: 18px;
+    }
+
+    /********************|********************/
+    /*               PLAYER RESULTS          */
+    /********************|********************/
+    #player_results .flag
+    {
+        width: 53px;
+        height: 32px;
+        display: block;
+    }
+    .pagin
+    {
+        padding: 0 9px 9px 9px;
+        font-size: 1em;
+    }
+
+    .filter
+    {
+        position: absolute;
+        top: 18px;
+        right: 9px;
+        display: block;
+        width: 90px;
+        height: 28px;
+        min-height: 28px;
+        background: url('/styles/img/dark_trans.png');
+        border: solid 1px #7c7c7c;
+        border-radius: 3px;
+        z-index: 100;
+    }
+    .filter:hover
+    {
+        background: #151515;
+        height: auto;
+        max-height: 500px;
+        min-height: 30px;
+    }
+    .filter .menu
+    {
+        display: none;
+    }
+    .filter .filter_list
+    {
+        height: 20px;
+        min-height: 20px;
+        overflow: hidden;
+        background: none;
+        margin: 5px 0 9px 0;
+        position: relative;
+        float: left;
+        display: block;
+    }
+    .filter:hover .filter_list
+    {
+        height: auto;
+        max-height: 500px;
+        min-height: 30px;
+    }
+    .filter .filter_list .title
+    {
+        margin: 0;
+        width: 100%;
+        font-size: 0.750em;
+        background: none;
+        padding: 2% 5%;
+    }
+    .filter .filter_list li
+    {
+        padding: 2% 5%;
+        width: 90%;
+        float: left;
+        display: block;
+    }
+    .filter .filter_list li:hover
+    {
+        background: #000;
+    }
+    .filter:hover .filter_list
+    {
+        display: block;
+    }
+
+    .site_block .rpp .title
+    {
+        margin: 7px 9px 0 9px;
+        width: 115px;
+    }
+
+    /********************|********************/
+    /*             RANKING TABLE             */
+    /********************|********************/
+    #ranking_table #player_filter
+    {
+        width: 264px;
+        position: absolute;
+        top: 6px;
+        right: 60px;
+    }
+    #ranking_table #player_filter .input
+    {
+        border-radius: 3px;
+        border: solid 1px #5a5a5a;
+        height: 16px;
+    }
+    #ranking_table #player_filter .search_button
+    {
+        height: 30px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-top: solid 1px #5a5a5a;
+        border-right: solid 1px #5a5a5a;
+        border-bottom: solid 1px #5a5a5a;
+        border-left: none;
+    }
+
+
+    /********************|********************/
+    /*              SIDEBAR BLOCK            */
+    /********************|********************/
+    .sidebar_block
+    {
+        background: url('/styles/img/dark_trans.png');
+        border-radius: 3px;
+        width: 100%;
+        overflow: hidden;
+        padding: 0 0 9px 0;
+        float: left;
+        margin: 0 0 9px 0;
+    }
+    .sidebar_block .text
+    {
+        border-radius: 3px;
+        background: url('/styles/img/dark_trans.png');
+        padding: 9px;
+        position: relative;
+        overflow: hidden;
+        width: auto;
+        margin: 0 9px;
+    }
+    .sidebar_block .text .click_me
+    {
+        width: 100%;
+        height: 100%;
+        display: block;
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+    .sidebar_block .dark_box
+    {
+        border-radius: 3px;
+        background: url('/styles/img/dark_trans.png');
+        padding: 9px;
+        overflow: hidden;
+        width: auto;
+        margin: 9px;
+    }
+    .sidebar_block .text p
+    {
+        margin: 0;
+        line-height: 1.2em;
+    }
+    .sidebar_block .text .graph
+    {
+        width: 44px;
+        height: 44px;
+        display: block;
+        background: url('/styles/img/sprites.png') 0 -40px;
+        float: left;
+        margin-right: 9px;
+    }
+    .sidebar_block .text .pdf
+    {
+        width: 42px;
+        height: 42px;
+        display: block;
+        background: url('/styles/img/sprites.png') -50px -40px;
+        float: left;
+        margin-right: 9px;
+    }
+    .sidebar_block .text .csv
+    {
+        width: 44px;
+        height: 44px;
+        display: block;
+        background: url('/styles/img/sprites.png') -100px -90px;
+        float: left;
+        margin-right: 9px;
+    }
+
+
+    .widget
+    {
+        width: 44px;
+        height: 44px;
+        display: block;
+        background: url('/styles/img/sprites.png') -100px -40px;
+        float: left;
+        margin-right: 9px;
+    }
+    .sidebar_block .more
+    {
+        font-family: 'Lato' , sans-serif;
+        float: right;
+        font-size: 0.875em;
+        margin: 9px 2% 0 0;
+    }
+
+    /********************|********************/
+    /*               NEWS CONTENT            */
+    /********************|********************/
+
+    #latest_news_list .item
+    {
+        width: 49.8%;
+    }
+    #latest_news .expand
+    {
+        width: 188px;
+        background: url('/styles/img/dark_trans.png');
+        font-size: 0.875em;
+        font-weight: normal;
+        display: block;
+        padding: 5px;
+        margin: 9px 0 0 0;
+        border-radius: 3px;
+    }
+
+    #news_filter #player_filter
+    {
+        margin: 0 0 0 9px;
+        width: 220px;
+    }
+    #news_filter .search_field.news_search
+    {
+        background: none;
+    }
+    #news_filter .search_field.news_search .player_search input
+    {
+        border: solid 1px #5a5a5a;
+        width: 180px;
+    }
+    #news_filter .search_field.news_search .player_search .search_button
+    {
+        display: none;
+    }
+    #news_filter .search_field.news_search .go
+    {
+        width: 30px;
+        height: 30px;
+        display: block;
+        float: right;
+        margin-right: 9px;
+    }
+    #news_filter .search_field.news_search .go .search_button
+    {
+        width: 30px;
+        height: 30px;
+        border: solid 1px #5a5a5a;
+        border-radius: 3px;
+        background: #000000 url('/styles/img/sprites.png') -8px -1px;
+    }
+
+
+    #news_filter.site_block .select_container
+    {
+        width: 140px;
+        height: 30px;
+        top: 31px;
+    }
+    #news_filter.site_block .select_container .title
+    {
+        color: #999999;
+        font-size: 0.688em;
+        display: block;
+        position: absolute;
+        top: -16px;
+        left: 5px;
+    }
+
+
+    #news_filter.site_block .select_container .arrow
+    {
+        position: absolute;
+        width: 10px;
+        height: 12px;
+        padding: 5px 5px 5px 10px;
+        background: #000 url('/styles/img/sprites.png') -290px 6px;
+        right: 4px;
+        top: 4px;
+        pointer-events: none;
+        z-index: 100;
+        margin: 0;
+    }
+
+    #news_filter.site_block .select_container .select_filter
+    {
+        /*background:rgba(0,0,0,0.5);*/
+        background: #000;
+        color: #fff;
+        padding: 6px 5px;
+        border-radius: 3px;
+        border: solid 1px #5a5a5a;
+        width: 100%;
+        height: 30px;
+        font-size: 11px;
+        opacity: 1;
+    }
+    /********************|********************/
+    /*               ABOUT PAGES             */
+    /********************|********************/
+    .about_nav
+    {
+        overflow: hidden;
+        padding: 9px 0;
+    }
+    .about_nav ul
+    {
+        text-align: center;
+    }
+    .about_nav ul li
+    {
+        margin: 0 2px;
+        overflow: hidden;
+        display: inline-block;
+    }
+    .about_nav ul li a
+    {
+        margin: 0;
+    }
+    .about_nav ul .howranwo
+    {
+        width: 26%;
+    }
+    .about_nav ul .howranevo
+    {
+        width: 27.5%;
+    }
+    .about_nav ul .faqs
+    {
+        width: 7%;
+    }
+    .about_nav ul .contact
+    {
+        width: 13%;
+    }
+    .about_nav ul .downloads
+    {
+        width: 20%;
+    }
+
+    #contact .address
+    {
+        width: 200px;
+        float: left;
+        margin: 9px 0 0 0;
+    }
+    #contact .form
+    {
+        float: right;
+        width: 60%;
+        margin: 9px 0 0 0;
+    }
+
+
+
+    /***********DOWNLOADS************/
+    #download_archive
+    {
+    }
+    #download_archive .downloads .item
+    {
+        width: 49%;
+    }
+    #download_archive .downloads .item:hover a
+    {
+        color: grey;
+    }
+    #download_archive .downloads .item:hover a span
+    {
+        opacity: 0.5;
+    }
+    #download_archive .downloads .item.even
+    {
+        float: left;
+    }
+    #download_archive .downloads .item.odd
+    {
+        float: right;
+    }
+    #download_archive .downloads .item a
+    {
+        font-size: 0.750em;
+    }
+
+    /********************|********************/
+    /*               LAZY SLIDER             */
+    /********************|********************/
+    .page_banner.lzys
+    {
+        background: #0a0a0a;
+    }
+
+    #top_slider
+    {
+        z-index: 5000;
+        margin: 0 auto;
+        position: absolute;
+        overflow: hidden;
+        display: block;
+        width: 100%;
+        text-align: center;
+        top: 250px;
+    }
+    #top_slider li
+    {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background: #fff;
+        margin: 2px;
+        cursor: pointer;
+        box-shadow: 1px 1px 2px 0 #000;
+    }
+    #top_slider li.active
+    {
+        background: #acabab;
+        box-shadow: inset 1px 1px 2px 0 #000;
+    }
+    .lzys .loading
+    {
+        background: url('../img/slider-loader.gif');
+        width: 16px;
+        height: 16px;
+        display: block;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        z-index: 0;
+        margin: -8px 0 0 -8px;
+    }
+    #home_banner.lzys .name
+    {
+        margin-top: 35px;
+        margin-bottom: 50px;
+        font-weight: 300;
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+    #home_banner.lzys .rank
+    {
+        font-weight: 500;
+        font-size: 26px;
+        text-transform: uppercase;
+    }
+    #home_banner.lzys .rank, #home_banner.lzys .career
+    {
+        font-size: 20px;
+    }
+
+
+
+    /********************|********************/
+    /*             SHOW ELEMENTS             */
+    /********************|********************/
+    #download_ranking, .page_banner, #main_footer .logos, .mhb
+    {
+        display: block;
+    }
+    .mht
+    {
+        display: table-cell;
+    }
+
+    #ranking_graph, #download_ranking, #ranking_history, #latest_news_s
+    {
+        width: 49%;
+    }
+    #download_ranking, #ranking_history
+    {
+    }
+    #ranking_graph
+    {
+        float: right;
+    }
+
+
+    /********************|********************/
+    /*                 FOOTER                */
+    /********************|********************/
+	/*Social media links style*/
+	.social-menu {
+		text-align:center;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		width: 100%;
+
+	}
+
+	.social-menu .in_touch {
+		display: none;
+	}
+
+	.and_finally .social-menu {
+		display: none;
+	}
+
+	.social-menu i.fa {
+		color: #a1a1a1;
+		margin-right: 12px;
+		font-size: 25px;
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+	}
+	.fa {
+		display: inline-block;
+		font: normal normal normal 14px/1 FontAwesome;
+		font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		transform: translate(0, 0);
+	}
+	.social-menu i.fa:hover {
+		color:  #FFFFFF;
+	}
+
+	.fa-facebook-f:before,
+	.fa-facebook:before {
+		content: "\f09a";
+	}
+	.fa-instagram:before {
+		content: "\f16d";
+	}
+	.fa-twitter:before {
+		content: "\f099";
+	}
+	
+	/*End of Social media links*/
+
+
+    .logos .eligible_tours, .logos .founders
+    {
+        width: 98%;
+        margin: 0 auto;
+        float: none;
+        background: url('../img/dark_trans.png');
+        border-radius: 3px;
+    }
+
+    /********************|********************/
+    /*                 LOGOS    :|           */
+    /********************|********************/
+
+    .logo
+    {
+        display: inline-block;
+        background: url('/styles/img/logos/logos.png');
+        margin: 1px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        transition: none;
+        vertical-align: middle;
+    }
+    /*.founders .logo {*/
+    /*margin:9px 6px;*/
+    /*}*/
+    .logo.pga_tour
+    {
+        width: 47px;
+        height: 65px;
+        background-position: 0px -160px;
+    }
+    .logo.pga_tour:hover, .logo.pga_tour:active
+    {
+        background-position: -50px -160px;
+    }
+    .logo.euro_tour
+    {
+        width: 78px;
+        height: 54px;
+        background-position: -100px -160px;
+    }
+    .logo.euro_tour:hover, .logo.euro_tour:active
+    {
+        background-position: -180px -160px;
+    }
+    .logo.ss_tour
+    {
+        width: 115px;
+        height: 52px;
+        background-position: -260px -160px;
+    }
+    .logo.ss_tour:hover
+    {
+        background-position: -380px -160px;
+    }
+    .logo.ssbe_tour
+    {
+        width: 115px;
+        height: 52px;
+        background-position: -263px -100px;
+    }
+    .logo.ssbe_tour:hover
+    {
+        background-position: -380px -100px;
+    }
+    .logo.australasia
+    {
+        width: 137px;
+        height: 52px;
+        background-position:-137px -937px;
+    }
+    .logo.australasia:hover
+    {
+        background-position: -1px -937px;
+    }
+    .logo.japan
+    {
+        width: 85px;
+        height: 52px;
+        background-position: -240px -240px;
+    }
+    .logo.japan:hover
+    {
+        background-position: -330px -240px;
+    }
+    .logo.asian_tour
+    {
+        width: 94px;
+        height: 40px;
+        background-position: -130px -690px;
+    }
+    .logo.asian_tour:hover
+    {
+        background-position: -230px -690px;
+    }
+    .logo.pga_can
+    {
+        width: 66px;
+        height: 59px;
+        background-position: -62px -876px;
+    }
+    .logo.pga_can:hover
+    {
+		width: 66px;
+        background-position: 0 -876px;
+    }
+	.logo.mgt_tour
+    {
+        width: 93px;
+        height: 52px;
+        background-position: -241px -883px;
+	    margin-right: 11px;
+    }
+    .logo.mgt_tour:hover
+    {
+		width: 93px;
+		margin-right: 11px;
+        background-position: -145px -883px;
+        background-color: white;
+    }
+    .logo.pga_china
+    {
+        width: 68px;
+        height: 65px;
+        background-position: -5px -750px;
+    }
+    .logo.pga_china:hover
+    {
+        background-position: -86px -750px;
+    }
+
+    .logo.pga_lat
+    {
+        width: 82px;
+        height: 65px;
+        background-position: -220px -300px;
+    }
+    .logo.pga_lat:hover
+    {
+        background-position: -310px -300px;
+    }
+    .logo.korean_tour
+    {       
+        width: 58px;
+        height: 59px;
+        background-position: -327px -681px;
+    }
+    .logo.korean_tour:hover
+    {
+        background-position: -391px -681px;
+    }
+    .logo.web_tour
+    {
+        width: 85px;
+        height: 52px;
+        background-position: -100px -370px;
+    }
+    .logo.web_tour:hover
+    {
+        background-position: -190px -370px;
+    }
+    .logo.asia_dev_tour {
+        width:94px;
+        height:40px;
+        background-position:-3px -108px;
+    }
+    .logo.asia_dev_tour:hover {
+        background-position: -101px -108px;
+    }
+    .logo.euro_challenge
+    {
+        width: 78px;
+        height: 55px;
+        background-position: 0px -440px;
+    }
+    .logo.euro_challenge:hover
+    {
+        background-position: -80px -440px;
+    }
+    /*.logo.one_asia
+    {
+        width: 83px;
+        height: 52px;
+        background-position: -370px -440px;
+    }
+    .logo.one_asia:hover
+    {
+        background-position: -280px -440px;
+    }*/
+    .logo.chn_tour
+    {
+        width: 83px;
+        height: 52px;
+        background-position: -335px -883px;
+    }
+    .logo.chn_tour:hover
+    {
+        background-position: -414px -883px;
+    }
+    .logo.augusta
+    {
+        width: 45px;
+        height: 62px;
+        background-position: -110px -540px;
+    }
+    .logo.augusta:hover
+    {
+        background-position: -160px -540px;
+    }
+    .logo.usga
+    {
+        width: 116px;
+        height: 51px;
+        background-position: -210px -540px;
+    }
+    .logo.usga:hover
+    {
+        background-position: -330px -540px;
+    }
+    .logo.ra
+    {
+        width: 52px;
+        height: 51px;
+        background-position: 0px -620px;
+    }
+    .logo.ra:hover
+    {
+        background-position: -60px -620px;
+    }
+    .logo.igf
+    {
+        width: 56px;
+        height: 59px;
+        background-position: -350px -620px;
+    }
+    .logo.igf:hover
+    {
+        background-position: -290px -620px;
+    }
+    .logo.pga
+    {
+        width: 60px;
+        height: 60px;
+        background-position: 0px -680px;
+    }
+    .logo.pga:hover
+    {
+        background-position: -60px -680px;
+    }
+
+    .logo.alps_tour
+    {
+        width: 60px;
+        height: 65px;
+        background-position: -410px -753px;
+    }
+    
+     .logo.alps_tour:hover
+    {
+        background-position: -346px -753px;
+    }
+    
+    .logo.ept_tour
+    {   
+        width: 92px;
+        height: 55px;
+        background-position: -284px -818px;
+    }
+    
+     .logo.ept_tour:hover
+    {
+        background-position: -190px -818px;
+    }
+    
+    .logo.ngl_tour
+    {   
+        width: 57px;
+        height: 57px;
+        background-position: -439px -818px;
+    }
+    
+     .logo.ngl_tour:hover
+    {
+        background-position: -378px -818px;
+    }
+    
+    .logo.pgt_tour
+    {   width: 92px;
+        height: 55px;
+        background-position: -96px -818px;
+    }
+    
+    .logo.pgt_tour:hover
+    {
+        background-position: -2px -818px;
+    }
+}
