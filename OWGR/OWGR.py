@@ -218,7 +218,7 @@ def spit_out_headshots_needed(updated_list):
     # pprint.pprint(heads_needed)
 
     with open('heads_needed.txt', 'w') as file_handler:
-        file_handler.write("HEADSHOTS THAT WE NEED\n\n")
+        file_handler.write("HEADSHOTS THAT ARE NEEDED\n\n")
         for line in heads_needed:
             file_handler.write("{}  {}\n".format(line[0], line[1]))
 
