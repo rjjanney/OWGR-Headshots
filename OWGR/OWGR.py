@@ -105,25 +105,18 @@ def process_lists(old_list, new_list):
                 unmatched_new_list.remove(item)
             # copy existing list entry and add rank as 3rd & 4th entry
             # in new list "updated_list"
-        updated_list.append((item[0],
-                             item[1],
-                             PatternFill(start_color=color1,
-                                         end_color=color1,
-                                         fill_type="solid"),
-                             PatternFill(start_color=color2,
-                                         end_color=color2,
-                                         fill_type="solid")))
+
+                updated_list.append((item[0],
+                                     item[1],
+                                     color1,
+                                     color2))
 
     # append non-matches to updated list with RED formatting
     for item in unmatched_new_list:
         updated_list.append((item[0],
                              item[1],
-                             PatternFill(start_color=RED,
-                                         end_color=RED,
-                                         fill_type="solid"),
-                             PatternFill(start_color=RED,
-                                         end_color=RED,
-                                         fill_type="solid")))
+                             RED,
+                             RED))
 
     # copy all the non-ranked headshots matches
     # to updated_list, with ranking of 101
@@ -131,13 +124,28 @@ def process_lists(old_list, new_list):
     for line in working_list:
         updated_list.append((101,
                              line[1],
-                             PatternFill(start_color=line[2],
-                                         end_color=line[2],
-                                         fill_type="solid"),
-                             PatternFill(start_color=line[3],
-                                         end_color=line[3],
-                                         fill_type="solid")))
+                             line[2],
+                             line[3]))
+
     return updated_list
+
+
+def convert_colors(list_with_colors):
+    '''
+    Converts color values to excel sheet style fill objects
+    and returns new list
+    '''
+
+    new_formatted_list = []
+    for line in list_with_colors:
+        color2017 = PatternFill(start_color=line[2],
+                                end_color=line[2],
+                                fill_type="solid")
+        color2018 = PatternFill(start_color=line[3],
+                                end_color=line[3],
+                                fill_type="solid")
+        new_formatted_list.append((line[0], line[1], color2017, color2018))
+    return new_formatted_list
 
 
 def save_updated_excel_file(updated_list):
@@ -202,7 +210,7 @@ def spit_out_headshots_needed(updated_list):
     heads_needed = []
     for line in updated_list:
             # if names match,
-            if line[2].bgColor.rgb == RED and line[3].bgColor.rgb == RED:
+            if line[2] == RED and line[3] == RED:
                 # copy existing list entry and add rank as a 3rd entry
                 # in new list "updated_list"
                 heads_needed.append((line[0],
@@ -228,5 +236,8 @@ if __name__ == "__main__":
     # save text list of heads needed
     spit_out_headshots_needed(up_to_date_list)
 
+    # convert colors to excel cell format
+    list_to_save = convert_colors(up_to_date_list)
+
     # save updated_list to excel file
-    save_updated_excel_file(up_to_date_list)
+    save_updated_excel_file(list_to_save)
