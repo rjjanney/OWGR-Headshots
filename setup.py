@@ -7,7 +7,7 @@ Usage:
 
 from setuptools import setup
 
-APP = ['8_OWGR.py']
+APP = ['OWGR/OWGR.py']
 DATA_FILES = ['OWGR.xlsx']
 OPTIONS = {'argv_emulation': True}
 
