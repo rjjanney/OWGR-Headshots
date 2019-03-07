@@ -8,7 +8,7 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 # Constants
 RED = "FFFF8080"
 GREEN = "FF80FF80"
-EXCEL_FILE = "OWGR.xlsx"
+EXCEL_FILE = "../OWGR.xlsx"
 URL = "http://www.owgr.com/ranking"
 
 

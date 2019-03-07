@@ -1,3 +1,7 @@
 .pytest_cache
 **/__pycache__
 *.pyc
+UNKNOWN.egg-info/
+build/
+dist/
+openpyxl-2.5.0.tar.gz

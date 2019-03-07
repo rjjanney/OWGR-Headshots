@@ -1,3 +1,4 @@
+"""Run with pytest -v."""
 from OWGR import OWGR
 from openpyxl import load_workbook
 
