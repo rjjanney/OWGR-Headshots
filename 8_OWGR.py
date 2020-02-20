@@ -23,14 +23,15 @@ def get_excel_sheet_data():
     worksheet = workbook.active
     # print(worksheet.dimensions)
     old_list = []
-    for row in worksheet.iter_rows(min_row=4, min_col=2, max_col=6):
+    for row in worksheet.iter_rows(min_row=4, min_col=2, max_col=7):
         if row[0].value:
             # rank, name, headshot or not
             old_list.append((row[0].value,
                              row[1].value,
                              row[2].fill.bgColor.rgb,
                              row[3].fill.bgColor.rgb,
-                             row[4].fill.bgColor.rgb))
+                             row[4].fill.bgColor.rgb,
+                             row[5].fill.bgColor.rgb))
     return old_list
 
 
@@ -80,10 +81,12 @@ def process_lists(old_list, new_list):
     color1 = ""
     color2 = ""
     color3 = ""
+    color4 = ""
 
     # compare each line of latest list to each line of working list
     for item in new_list:
         for line in old_list:
+
             # if names match,
             if item[1].lower() == line[1].lower():
                 if line[2] == green:
@@ -110,6 +113,14 @@ def process_lists(old_list, new_list):
 
                     color3 = red
 
+                if line[5] == green:
+                    # copy color column1
+                    color4 = green
+
+                elif line[5] == red:
+
+                    color4 = red
+
                 # remove match from working list and unmatched_new_list
                 working_list.remove(line)
                 if item in unmatched_new_list:
@@ -126,12 +137,18 @@ def process_lists(old_list, new_list):
                                          fill_type="solid"),
                              PatternFill(start_color=color3,
                                          end_color=color3,
+                                         fill_type="solid"),
+                             PatternFill(start_color=color4,
+                                         end_color=color4,
                                          fill_type="solid")))
 
     # append non-matches to updated list with red formatting
     for item in unmatched_new_list:
         updated_list.append((item[0],
                              item[1],
+                             PatternFill(start_color=red,
+                                         end_color=red,
+                                         fill_type="solid"),
                              PatternFill(start_color=red,
                                          end_color=red,
                                          fill_type="solid"),
@@ -156,6 +173,9 @@ def process_lists(old_list, new_list):
                                          fill_type="solid"),
                              PatternFill(start_color=line[4],
                                          end_color=line[4],
+                                         fill_type="solid"),
+                             PatternFill(start_color=line[5],
+                                         end_color=line[5],
                                          fill_type="solid")))
     return updated_list
 
@@ -179,6 +199,7 @@ def save_updated_excel_file(updated_list):
     worksheet.cell(3, 4).value = "2017"
     worksheet.cell(3, 5).value = "2018"
     worksheet.cell(3, 6).value = "2019"
+    worksheet.cell(3, 7).value = "2020"
 
     row = 4
     for line in updated_list:
@@ -194,6 +215,8 @@ def save_updated_excel_file(updated_list):
         worksheet.cell(row, 5).fill = line[3]
         worksheet.cell(row, 6).border = thin_border
         worksheet.cell(row, 6).fill = line[4]
+        worksheet.cell(row, 7).border = thin_border
+        worksheet.cell(row, 7).fill = line[5]
         row += 1
 
     # column widths
@@ -202,12 +225,13 @@ def save_updated_excel_file(updated_list):
     worksheet.column_dimensions["D"].width = 10
     worksheet.column_dimensions["E"].width = 10
     worksheet.column_dimensions["F"].width = 10
+    worksheet.column_dimensions["G"].width = 10
 
     # thick line for the cutoff rank
-    for i in range(7):
+    for i in range(8):
         worksheet.cell(67, i+1).border = thick_border
 
-    tab = Table(displayName="Table1", ref=("B3:E" + str(row-1)))
+    tab = Table(displayName="Table1", ref=("B3:F" + str(row-1)))
     style = TableStyleInfo(name="TableStyleLight8", showFirstColumn=False,
                            showLastColumn=False, showRowStripes=False,
                            showColumnStripes=False)
@@ -227,11 +251,10 @@ def spit_out_headshots_needed(updated_list):
     """
     heads_needed = []
     for line in updated_list:
-            # if names match,
-            # OLD if line[2].bgColor.rgb == red and line[3].bgColor.rgb == red and line[4].bgColor.rgb == red:
+            # If red, indicating missing headshot, in 2019 column(line[4])
             if line[4].bgColor.rgb == red:
-                # copy existing list entry and add rank as a 3rd entry
-                # in new list "updated_list"
+                # copy existing rank and name as an entry
+                # in new list "heads needed"
                 heads_needed.append((line[0],
                                      line[1]))
     # pprint.pprint(heads_needed)
